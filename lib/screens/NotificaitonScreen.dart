@@ -9,27 +9,28 @@ class NotificationScreen extends StatefulWidget {
   State<NotificationScreen> createState() => _NotificationScreenState();
 }
 List<Notifications> today = [
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
 
 ];
 List<Notifications> yesterday = [
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
 
 ];
 List<Notifications> lastsevendays = [
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
-  Notifications(paidno: 'Invoice Paid  #0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: true ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
+  Notifications(paidno: r'#0083',date:'Mon, October 31,2022   10:00 AM',quickinvoice: false ),
 
 
 ];
 late bool control;
+late String controllist = '';
 List<List<Notifications>> listt = [
   today,
   yesterday,
@@ -106,6 +107,7 @@ SizedBox(height: 30.h,),
       if(index == 0)
         {
           control = today[index1].quickinvoice;
+
         }
       else if(index ==1){
         control = yesterday[index1].quickinvoice;
@@ -131,7 +133,7 @@ SizedBox(height: 30.h,),
                       children:[
                         Text('Invoice ',style: TextStyle(color: Color(0xff2A3747),fontSize: 15.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
                         Text('Paid ',style: TextStyle(color: Color(0xff006817),fontSize: 15.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
-                        Text('Invoice',style: TextStyle(color: Color(0xff2A3747),fontSize: 15.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
+                        Text(index==0?'${today[index1].paidno}':index==1?'${yesterday[index1].paidno}':'${lastsevendays[index1].paidno}',style: TextStyle(color: Color(0xff2A3747),fontSize: 15.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
                       ]
 
                   ),
@@ -155,7 +157,7 @@ SizedBox(height: 30.h,),
             Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Quick Invoice Raisedd  #0084',style: TextStyle(color: Color(0xff2A3747),fontSize: 15.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
+                  Text('Quick Invoice Raisedd ${index==0?'${today[index1].paidno}':index==1?'${yesterday[index1].paidno}':'${lastsevendays[index1].paidno}'}',style: TextStyle(color: Color(0xff2A3747),fontSize: 15.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
 
                   Text('Mon, October 31,2022   10:00 AM',style: TextStyle(color: Color(0xffF0536B),fontSize: 12.sp,fontWeight:FontWeight.w400,fontFamily: "Mont-ExtraLightDEMO"),),
 
