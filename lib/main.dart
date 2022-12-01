@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:moeedproject/screens/CalenderScreen.dart';
 import 'package:moeedproject/screens/ChatScreen.dart';
 import 'package:moeedproject/screens/NotificaitonScreen.dart';
+import 'package:moeedproject/screens/TestCalender.dart';
 import 'package:moeedproject/screens/charging_station.dart';
 import 'package:moeedproject/screens/login_screen.dart';
 import 'package:moeedproject/screens/propertySearch.dart';
@@ -28,13 +30,14 @@ class MyApp extends StatelessWidget {
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             fontFamily: "Aquatico-Regular",
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.yellow,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           home: child,
         );
       },
-      child: NotificationScreen(),
+      child: Calender(),
     );
   }
 }
+
